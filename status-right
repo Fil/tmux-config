@@ -1,0 +1,45 @@
+#! /usr/bin/env php
+<?php
+
+$palette = array(
+//NAVY
+'#001f3f',
+//BLUE 
+'#0074d9',
+//AQUA 
+'#7fdbff',
+//TEAL 
+'#39cccc',
+//OLIVE
+'#3d9970',
+//GREEN  
+'#2ecc40',
+//LIME   
+'#01ff70',
+//YELLOW 
+'#ffdc00',
+//ORANGE 
+'#ff851b',
+//RED
+'#ff4136',
+//MAROON 
+'#85144b',
+//FUCHSIA
+'#f012be',
+//PURPLE 
+'#b10dc9',
+);
+
+$load = sys_getloadavg();
+
+#$l2 = floor(sqrt(abs($load[0]-1)));
+$l2 = $load[0];
+$colour = $palette[min(floor(1+$l2),12)];
+
+## todo : ne pas changer la couleur si pas besoin
+`tmux set -g status-bg "$colour"`;
+
+echo "load=",$load[0];
+# echo ' ',$colour;
+
+
