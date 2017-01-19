@@ -13,7 +13,7 @@ unbind ^A
 bind ^A select-pane -t :.+
 
 # status bar
-set-option -g status-right '#[fg=black,bright]#(~/tmux/status-right)'
+set-option -g status-right '#[fg=black,bright]#(/usr/bin/env php ~/tmux/status-right)'
 set -g status-interval 10
 
 # bell alert
